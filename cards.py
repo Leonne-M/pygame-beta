@@ -1,14 +1,19 @@
 import random
 
-# Define suits and ranks
-suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades']
+
+suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades']# Define suits and ranks
 ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King', 'Ace']
+deck = [(rank, suit) for suit in suits for rank in ranks]# Create a deck of cards
 
-# Create a deck of cards
-deck = [(rank, suit) for suit in suits for rank in ranks]
+random.shuffle(deck)# Shuffle the deck
 
-# Shuffle the deck
-random.shuffle(deck)
+if len(deck)==0:
+    suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades']# Define suits and ranks
+ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King', 'Ace']
+deck = [(rank, suit) for suit in suits for rank in ranks]# Create a deck of cards
+
+random.shuffle(deck)# Shuffle the deck
+    
 
     
 
