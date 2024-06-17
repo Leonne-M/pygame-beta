@@ -34,7 +34,7 @@ def compmoves(computer_hand):
            print(f"The game was changed to {newsuit}")
    computer_hand.remove(play)
    if played[0] in ['8', 'King', 'Jack', 'Queen']:
-         return playermoves(player_hand)
+         return compmoves(compmoves)
    print(played)
    return print("computer played")
 compmoves(computer_hand)
