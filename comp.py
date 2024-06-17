@@ -30,6 +30,11 @@ def compmoves(computer_hand):
      print("You did not play an Ace card so you pick")
      return
    played.append(play)
+   if play[0]=="Ace":
+           nsuits=["Hearts","Spades","Clubs","Diamonds"]
+           newsuit=random.choice(nsuits)
+           played[-1]=(played[-1][0],newsuit)
+           print(f"The game was changed to {newsuit}")
    computer_hand.remove(play)
    print(played)
    return print("computer played")
