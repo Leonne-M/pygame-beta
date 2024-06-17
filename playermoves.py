@@ -6,9 +6,7 @@ played=[random.choice(newdeck)]
 
 
 def playermoves(player_hand):
-   if played[-1][0]in ['8', 'King', 'Jack', 'Queen']:
-    return print("Your turn has been skipped")
-   else:
+   
     print(f"Your hand: {player_hand}")
     print(computer_hand)
     print(f"Played Cards: {played}")
@@ -20,16 +18,19 @@ def playermoves(player_hand):
     play = (rank, suit)
    
     if play in player_hand and (play[0] in played[-1][0] or play[1] in played[-1][1]):
-        if played[-1][0]=='3' or played[-1][0]== '2' and play[0]!='Ace':  
+        if played[-1][0]=='3' or played[-1][0]== '2' and play[0]!='Ace'or play[0]=='Pick':  
              for i in range(int(played[-1][0])):
                player_hand.append(deck.pop())
                return
         played.append(play)
+        player_hand.remove(play)
         if play[0]=="Ace":
            newsuit=input("Enter the new card suit: ")
            played[-1]=(played[-1][0],newsuit)
            print(f"The game was changed to {newsuit}")
-        player_hand.remove(play)
+        if play[0] in ['8', 'King', 'Jack', 'Queen']:
+         return playermoves(player_hand)
+
     elif rank=="Pick":
         player_hand.append(deck.pop())
         print("You picked!!")
