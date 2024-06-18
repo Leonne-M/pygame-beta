@@ -30,7 +30,7 @@ def playermoves(player_hand):
             if play[0] in ['8', 'King', 'Jack', 'Queen']:
                 return playermoves(player_hand)
             
-        elif rank() == "Pick": 
+        elif rank == "Pick": 
             player_hand.append(deck.pop())
             print("You picked a card!")
             
