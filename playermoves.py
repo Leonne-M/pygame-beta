@@ -6,7 +6,7 @@ played=[random.choice(newdeck)]
 
 
 def playermoves(player_hand):
-    while True: 
+   
         print(f"Your hand: {player_hand}")
         print(f"Computer's hand: {computer_hand}")
         print(f"Played Cards: {played}")
@@ -29,13 +29,14 @@ def playermoves(player_hand):
                 print(f"The game was changed to {newsuit}")
             if play[0] in ['8', 'King', 'Jack', 'Queen']:
                 return playermoves(player_hand)
-            break 
+            
         elif rank() == "Pick": 
             player_hand.append(deck.pop())
             print("You picked a card!")
-            break
+            
         else:
             print(f"Card {play} is not playable. Please try again.")
+            playermoves(player_hand)
 
 
 
