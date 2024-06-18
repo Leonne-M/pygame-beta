@@ -21,10 +21,10 @@ def compmoves(computer_hand):
    playing= random.choice(can_be_played)
    rank,suit=playing
    play = (rank, suit)
-   if (played[-1][0] == '3' or (played[-1][0] == '2' and play[0] != "Ace") or not can_be_played):
+   if played[-1][0] == '3' or played[-1][0] == '2' and play[0] != "Ace":
     for i in range(int(played[-1][0])):
       computer_hand.append(deck.pop())
-    print("You did not play an Ace card so you pick")
+    print("Comp did not play an Ace card so it picks")
     return
    played.append(play)
    if play[0]=="Ace":
